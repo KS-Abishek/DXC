@@ -1,0 +1,111 @@
+
+SELECT ceil(97.70)  FROM dual
+
+
+
+
+SELECT e.last_name, e.salary, j.JOB_title
+FROM employees e JOIN jobs j
+ON e.salary
+BETWEEN j.min_salary AND j.max_salary;
+
+SELECT e.last_name, e.department_id, d.department_name
+FROM employees e JOIN departments d
+ON (e.department_id = d.department_id) ;
+
+
+SELECT e.last_name, e.department_id, d.department_name,e.manager_id
+FROM employees e LEFT OUTER JOIN departments d
+ON (e.department_id = d.department_id) ;
+
+SELECT e.last_name, e.department_id, d.department_name
+FROM employees e RIGHT OUTER JOIN departments d
+ON (e.department_id = d.department_id) ;
+
+SELECT e.last_name, e.department_id, d.department_name
+FROM employees e FULL OUTER JOIN departments d
+ON (e.department_id = d.department_id) ;
+
+select * from employees
+where last_name='Grant'
+
+
+
+
+SELECT e.last_name, e.department_id, d.department_name
+FROM employees e FULL OUTER JOIN departments d
+ON (e.department_id = d.department_id) ;
+
+SELECT last_name, department_name
+FROM employees
+CROSS JOIN departments ;
+
+select to_char(hire_date,'fmdd/mm/yyyy') from employees
+
+select first_name from employees WHERE salary >(select salary from employees WHERE UPPER(first_name)='NEENA')
+
+
+select first_name from employees WHERE salary > (select salary FROM employees where)
+
+SELECT last_name, job_id, salary
+FROM employees
+WHERE salary =
+(SELECT MAX(salary)
+FROM employees);
+
+SELECT department_id,max(salary) from employees group by department_id having max(salary) > (select max(salary) from employees where department_id=30)
+
+
+create table DXC_DEPT
+
+(   DEPT_ID NUMBER(3),
+    DEPT_NAME VARCHAR2(20),
+    LOCATION VARCHAR(20)
+)
+
+DESC DXC_DEPT
+
+
+CREATE TABLE DXC_EMPLOYEES
+
+( EMP_ID NUMBER(3),
+    EMP_NAME VARCHAR2(20),
+    SALARY NUMBER(10),
+    MOBILE_NO CHAR(),
+    DEPT_ID NUMBER(3)
+)
+
+INSERT INTO DXC_DEPT values (100,'abishek','chennai')
+INSERT INTO DXC_DEPT values (200,'ikben','tripura')
+INSERT INTO DXC_DEPT values (300,'jagannath','hyderabad')
+INSERT INTO DXC_DEPT values (400,'eshwar','vijayawada')
+INSERT INTO DXC_DEPT values (500,'ganesh','warangal')
+
+select * from DXC_DEPT
+
+INSERT INTO DXC_EMPLOYEES values (1,'abishek',20000,22222,100)
+INSERT INTO DXC_EMPLOYEES values (2,'ikben',22000,333333,200)
+INSERT INTO DXC_EMPLOYEES values (3,'jagannath',24000,444444,300)
+INSERT INTO DXC_EMPLOYEES values (4,'eshwar',26000,555555,400)
+INSERT INTO DXC_EMPLOYEES values (5,'ganesh',27000,66666,500)
+
+
+
+create table PLAYERS
+
+(  PLAYERS_ID NUMBER(5),
+    PLAYERS_NAME VARCHAR2(20),
+    PLAYERS_TYPE VARCHAR2(20),
+    SCORE NUMBER(4)
+)
+
+
+
+
+INSERT INTO PLAYERS values (1,'MESSI','FORWARD',654)
+INSERT INTO PLAYERS values (2,'RONALDO','MIDDLE',678)
+INSERT INTO PLAYERS values (3,'DHONI','FORWARD',700)
+INSERT INTO PLAYERS values (4,'VIRAT','MIDDLE',643)
+INSERT INTO PLAYERS values (5,'RAINA','FORWARD',642)
+SELECT * FROM PLAYERS ORDER BY SCORE DESC
+
