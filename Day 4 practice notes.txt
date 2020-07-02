@@ -1,0 +1,74 @@
+select * from employees
+select e.first_name ||'works under manager ' || m.first_name from employees e join employees m
+ON m.employee_id = e.manager_id 
+
+
+select 'Employee: ' || worker.first_name || ' managed by Manager: ' || manager.first_name
+AS "Employee and there Managers"
+FROM employees worker JOIN employees manager
+ON manager.manager_id = worker.employee_id
+
+SELECT location_id, department_name , TO_CHAR(NULL) "state_province"
+FROM departments
+UNION
+SELECT location_id, TO_CHAR(NULL) "department_name", state_province
+FROM locations;
+
+SELECT first_name,salary, hire_date as "Hired Date" from COPY_EMPLOYEES
+UNION
+SELECT first_name,salary,TO_DATE(NULL) "Hired Date"  from RETIRED_EMPLOYEES
+
+select * from employees WHERE EMPLOYEE_ID=1922
+
+insert into employees values (1918,'Abishek','KS','ABIDXC',8667588404,'06/19/2020','IT_PROG',23000,NULL,200,60)
+select * from DEPARTMENTS
+
+insert into employees values (1919,'Abishek','KS','ABID5XC',8667588404,SYSDATE,'IT_PROG',23000,NULL,200,60)
+
+
+insert into employees values (1940,'Abishek','KS','ABIDXC1',8667588404,CURRENT_DATE,'IT_PROG',23000,NULL,200,60)
+
+insert into employees values (1922,'Abishek','KS','ABID25XC',8667588404,TO_DATE('FEB 3, 2003', 'MON DD, YYYY'),'IT_PROG',23000,NULL,200,60)
+
+
+create table sales_reps
+INSERT INTO sales_reps(employee_id, last_name, salary, commission_pct)
+SELECT employee_id, last_name, salary, commission_pct
+FROM employees
+WHERE salary < 15000
+
+create table COPY_EMPLOYEES as select * from employees
+
+create table SENIOR_EMPLOYEES as select * from employees where salary <= 17000
+
+select * from COPY_EMPLOYEES
+INTERSECT
+select * from SENIOR_EMPLOYEES;
+
+
+
+select * from employees
+UPDATE COPY_EMPLOYEES SET 1.20*salary
+
+UPDATE copy_employees SET salary = 1.2*salary WHERE UPPER(first_name)='DAVID'
+
+UPDATE copy_employees SET department_id = 
+(SELECT department_id FROM employees WHERE employee_id = 100)
+WHERE job_id = (SELECT job_id FROM employees WHERE employee_id = 200);
+
+UPDATE copy_employees SET email='steven@gmail.com', phone_number='8867205331' where employee_id = 100;
+
+UPDATE copy_employees SET JOB_ID='FI_MGR' where employee_id in (103,104,105,106)
+
+UPDATE copy_employees
+SET salary = (salary*0.2)+salary
+WHERE first_name='David'
+
+
+UPDATE copy_employees SET JOB_ID='FI_ACCOUNT' where employee_id BETWEEN 103 AND 106;
+
+
+delete from copy_employees;
+truncate table copy_employees;
+
+DELETE FROM COPY_EMPLOYEES WHERE hire_date = sysdate
