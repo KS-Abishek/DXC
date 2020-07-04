@@ -1,0 +1,25 @@
+
+create table student
+(
+    student_id number primary key,
+    student_name varchar2(10)
+)
+
+create table fees
+(
+   studentid number,
+   amount number,
+   foreign key (studentid) references student(student_id)
+
+)
+
+
+insert into student values(1,'abi')
+
+insert into fees values(1,10000)
+
+select * from fees
+
+ALTER TABLE STUDENT ADD CONSTRAINT STU_NAME_UNIQUE UNIQUE(EmailID);
+
+alter table fees add constraint chkfee check ( amount between 1000 and 10000 )
