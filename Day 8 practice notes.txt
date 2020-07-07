@@ -1,0 +1,134 @@
+/**
+ * hi how are you 
+ *
+ */
+public class Hello {
+
+	
+	
+	public static void main(String[] args) {
+     System.out.println("Hello from DXC Project");
+     System.out.println("Abishek");
+     System.out.print("2+2*4 = ");
+     System.out.print(2+2*4);
+     System.out.println();
+	}
+
+}
+
+****************
+
+public class Customer {
+	
+	public void work() {
+		System.out.println("helllo from work");
+	}
+	
+	public void disp() {
+		
+		System.out.println("helllo from display");
+		Customer x = new Customer();
+		x.work();
+	}
+
+	public static void main(String[] args) {
+	System.out.println("Hi abishek");
+	Customer x = new Customer();
+	x.disp();
+	}
+
+}
+
+
+************************
+public class Assignmnets {
+	
+	byte sno;
+	short num;
+	int mark;
+	long income;
+	char name;
+	float less;
+	double ohno;
+	boolean yeah;
+	
+	public void values() {
+		System.out.println("default value for bytes is : "+sno);
+		System.out.println("default value for short is : "+num);
+		System.out.println("default value for int is : "+mark);
+		System.out.println("default value for long is : "+income);
+		System.out.println("default value for char is : "+name);
+		System.out.println("default value for float is : "+less);
+		System.out.println("default value for doule is : "+ohno);
+		System.out.println("default value for boolean is : "+yeah);
+		}
+
+	public static void main(String[] args) {
+		Assignmnets a = new Assignmnets() ;
+		a.values();
+	}
+
+}
+
+**********************************
+
+
+import java.util.Scanner;
+public class AddNumbers {
+	
+	Scanner sc = new Scanner(System.in);
+	int num1,num2,result;
+	
+	public void sumnumbers()
+	{
+		System.out.print("Enter first number : ");
+		num1 = sc.nextInt();
+		System.out.print("Enter second number : ");
+		num2 = sc.nextInt();
+		result = num1+num2;
+		System.out.println("Result is : "+result);
+		
+		System.out.println(num1 + "+" + num2 + "= " + result);
+		
+	}
+	public static void main(String[] args) {
+		AddNumbers a = new AddNumbers();
+		a.sumnumbers();
+
+	}
+
+}
+
+
+***************
+
+
+
+import java.util.Scanner;
+public class Student {
+	
+	Scanner sc = new Scanner(System.in);
+	String studentname;
+	int marks;
+	int i;
+	public void mark() {
+		int target = 0;
+		target = sc.nextInt();
+        System.out.println(target);
+		
+	}
+	public static void main(String[] args) {
+		Student s = new Student();
+		s.mark();
+
+	}
+
+}
+
+
+
+
+
+
+
+

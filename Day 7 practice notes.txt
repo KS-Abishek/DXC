@@ -1,0 +1,65 @@
+select * from employees;
+
+create index index_LN on employees(last_name)
+
+select * from ALL_INDEX where TABLE_NAME = 'EMPLOYEES';
+
+SELECT INDEX_NAME,COLUMN_NAME FROM USER_IND_COLUMNS WHERE TABLE_NAME = 'EMPLOYEES';
+
+select * from USER_IND_COLUMNS
+
+
+create public synonym emp for employees;
+
+
+
+create or replace view emp_1
+as 
+select first_name,salary from employees ;
+
+
+select first_name from employees
+select first_name from emp_1
+
+update emp_1 set first_name = 'ellelen' where first_name = 'Ellen'
+
+
+update emp_1 set first_name = 'Ellen'where first_name = 'ellelen'
+
+
+select * from employee
+
+desc employee
+
+
+alter table employee rename column project_id to salllary
+
+
+alter table employee rename column salllary to project_id
+
+
+alter table employee set emp_dum number(2);
+
+
+ALTER TABLE employee
+ADD Email varchar2(255);
+
+
+create sequence abi
+ minvalue 120
+ maxvalue 1000
+ start with 125
+ increment by 1
+
+select * from employee
+
+insert into employee values(abi.nextval,'abima','mum',1009,default,null)
+
+alter table employee drop column EMAIL varchar2(255)
+
+ALTER TABLE employee
+ADD Email varchar2(255);
+
+alter table employee drop column EMPLOYEEID where column EMPLOYEEID = 119;
+
+delete from employee where EMPLOYEEID between 120 and 126
