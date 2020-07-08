@@ -1,0 +1,284 @@
+
+public class Student {
+	
+	public void study(){
+		System.out.println("Home work done");
+	}
+
+}
+
+
+
+public class Teacher {
+	
+	public void teach(){
+		System.out.println("Do the home work");
+	}
+}
+
+
+public class Fees {
+	
+	public void pay(){
+		System.out.println("pay the fees");
+	}
+
+
+}
+package games;
+
+public class Cricket {
+	
+	public void playCricket(){
+		System.out.println("play Cricket");
+	}
+
+}
+package games;
+
+public class Hockey {
+		
+		public void playHockey(){
+			System.out.println("play Hockey");
+		}
+}
+package university;
+
+public class College {
+
+		public void collegeName(){
+			System.out.println("College Name");
+		}
+}
+package university;
+
+public class CollegeCity {
+		
+		public void area(){
+			System.out.println("Chennai");
+		}
+}
+import university.*;
+
+public class Client {
+
+	public static void main(String[] args) {
+		Teacher t = new Teacher();
+		t.teach();
+		Student s = new Student();
+		s.study();
+		Fees f = new Fees();
+		f.pay();
+		
+		games.Cricket c = new games.Cricket();
+		c.playCricket();
+		
+		games.Hockey h = new games.Hockey();
+		h.playHockey();
+		
+		College co = new College();
+		co.collegeName();
+		
+		CollegeCity cc = new CollegeCity();
+		cc.area();
+	}
+
+}
+-----------------------------------------------------------------------------
+
+
+
+import java.util.Scanner;
+public class IfDemo {
+ int marks = 0;
+ String choice;
+ Scanner sc = new Scanner(System.in);
+ public void display() {
+	 do
+	  {
+  System.out.println("Please enter to marks to know the status : ");
+  marks = sc.nextInt();
+  if (marks > 90 && marks < 100)
+  {
+   System.out.println("CONGARTS !! YOU HAVE CLEARED THE EXAM WITH DISTINCTION");
+  }
+  else  if (marks > 80 && marks < 90){
+   System.out.println("CONGARTS !! YOU HAVE CLEARED THE EXAM WITH GOOD MARKS");
+  }
+  else
+  {
+   System.out.println("SORRY !! YOU HAVE TO RE APPEAR FOR EXAM");
+  }	
+  System.out.println("Do you want to check another result (Y/N) : ");
+  choice = sc.next();
+  
+ } while (choice.equalsIgnoreCase("Y"));
+ }
+ public static void main(String[] args) {
+  System.out.println("PROGRAM STARTED");
+  IfDemo d = new IfDemo();
+  d.display();
+ }
+}
+---------------------------------------------
+
+
+
+import java.util.Scanner;
+public class Car {
+
+	   String carName;
+	   String carNumber;
+	   String colour;
+	   int price;
+	   Scanner sc = new Scanner(System.in);
+	   public void start() {
+		   System.out.println("Car started : "+carName);
+	   }
+
+	   public void stop() {
+		   System.out.println("Car stopped : "+carName);
+	   }
+	   
+
+	   public void carDetails() {
+		   
+		   System.out.println("\n++++++++++++++CAR DETAILS++++++++++++++");
+		   System.out.println("\nCar name : "+carName);
+		   System.out.println("\nCar number : "+carNumber);
+		   System.out.println("Car colour : "+colour);
+		   System.out.println("Car price : "+price);
+		   
+	   }
+	   
+	   public void acceptCarDetails() {
+		   System.out.println("Car name : ");
+		   carName =sc.next();
+		   System.out.println("Car number : ");
+		   carNumber = sc.next();
+		   System.out.println("Car colour : ");
+		   colour = sc.next();
+		   System.out.println("Car price : ");
+		   price = sc.nextInt();
+		   
+	   }
+	public static void main(String[] args) {
+		Car c = new Car();
+		c.acceptCarDetails();
+		c.start();
+		c.stop();
+		c.carDetails();
+	
+	}
+
+}
+-----------------------------------------------
+
+
+import java.util.Scanner;
+
+//real time use case 
+public class ReadProgramAssignment {
+
+ Scanner sc = new Scanner(System.in);
+ int employeeAge = 0;
+ String employeeName;
+ String choice;
+
+ public void display() {
+
+  do {
+   System.out.print("Please enter your age :");
+   employeeAge = sc.nextInt();
+   System.out.print("Please enter your name :");
+   employeeName = sc.next();
+   System.out.println(employeeName + " , your age is : " + employeeAge);
+
+   System.out.println("Do u want to continue (Y for yes any key to exit);");
+   choice = sc.next();
+  } while (choice.equalsIgnoreCase("Y"));
+
+  System.out.println("Thanks for using my program");
+ }
+
+ public static void main(String[] args) {
+  ReadProgramAssignment r = new ReadProgramAssignment();
+  r.display();
+
+ }
+}
+
+-------------------------------------
+
+
+import java.util.Scanner;
+
+//switch demo
+public class SwitchDemo {
+
+ int week =0;
+ Scanner sc = new Scanner(System.in);
+ public void display() {
+  System.out.print("Enter the week number (1-7 ) - Monday as 1 ..");
+  week = sc.nextInt();
+  switch (week) {
+  case 1:
+   System.out.println("Today is monday");
+   break;
+  case 2:
+   System.out.println("Today is tuesday");
+   break;
+  case 3:
+   System.out.println("Today is wednesday");
+   break;
+  case 4:
+   System.out.println("Today is thursday");
+   break;
+  case 5:
+   System.out.println("Today is friday");
+   break;
+  case 6:
+  case 7:
+   System.out.println("WEEKEND");
+   break;
+  default:
+   System.out.println("Invalid week number");
+  }
+ }
+ public static void main(String[] args) {
+  SwitchDemo d = new SwitchDemo();
+  d.display();
+ }
+
+}
+
+----------------------
+
+
+public class WhileLoop {
+	
+	int num = 50;
+	public void looping(){
+		
+		while(num >=20)
+		{
+			
+			System.out.println(num);
+		    num=num-10;
+		}
+	}
+
+	public static void main(String[] args) {
+		WhileLoop w = new WhileLoop();
+		w.looping();
+
+	}
+
+}
+
+
+
+---------------------------------
+
+
+
