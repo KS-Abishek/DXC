@@ -1,0 +1,177 @@
+import java.util.Scanner;
+
+public class ConstDemo {
+ 
+ int id = 100;
+ String name = "Abishek";
+
+ public ConstDemo() {
+
+  System.out.println("from ConstDemo");
+  id = 200;
+  name = "ball";
+ }
+
+ public ConstDemo(int id, String name) {
+
+  System.out.println("from ConstDemo");
+  this.id = id;
+  this.name = name;
+ }
+
+ public void disp() {
+  System.out.println("helllo from display");
+  System.out.println(" a : " + id);
+  System.out.println("name : " + name);
+ }
+
+ public static void main(String[] args) {
+  Scanner sc = new Scanner(System.in);
+  System.out.println("Hi abishek, please enter number and string");
+  int i = sc.nextInt();
+  String n = sc.next();
+  ConstDemo x = new ConstDemo();
+  ConstDemo x2 = new ConstDemo(i, n);
+  x.disp();
+  x2.disp();
+ }
+}
+
+------------------------------------------------------------------
+
+
+
+public class Demo {
+	{
+	System.out.println("demmoooo eeee");
+	}
+	public void work() {
+		System.out.println("helllo from work");
+	}
+	
+	public void disp() {
+		
+		System.out.println("helllo from display");
+		Demo x = new Demo();
+		x.work();
+	}
+
+	public static void main(String[] args) {
+	System.out.println("Hi abishek");
+	Demo x = new Demo();
+	x.disp();
+	}
+	{
+		System.out.println("enddddd");
+	}
+
+}
+========================================================
+
+package pack1;
+
+public class A {
+	
+	public int num = 100;
+
+}
+
+package pack1;
+
+public class B extends A {
+	
+	public void display() {
+		
+		A a = new A();
+		System.out.println(a.num);
+		System.out.println(num);
+	}
+}
+
+
+package pack1;
+
+public class C {
+	
+	public void display() {
+		
+		A a = new A();
+		System.out.println(a.num);
+		System.out.println(a.num);
+	}
+
+}
+
+
+package pack2;
+
+import pack1.A;
+
+public class D {
+	
+	public void display() {
+		
+		A a = new A();
+		System.out.println(a.num);
+		System.out.println(a.num);
+	}
+
+}
+
+
+
+package pack2;
+
+import pack1.A;
+
+public class E extends A{
+	
+	public void display() {
+		
+		A a = new A();
+		System.out.println(a.num);
+		System.out.println(a.num);
+	}
+
+}
+
+
+=============================================
+
+
+
+
+
+public class W {
+	
+	public W() {
+		System.out.println("W Constructor");
+	}
+
+}
+
+===
+
+
+public class Z {
+	
+	
+	
+	W w = new W();
+	{
+		System.out.println("Int block");
+	}
+	
+	static {
+		System.out.println("Static");
+	}
+
+	public Z() {
+		System.out.println("Z Constructor");
+	}
+     public static void main(String[]args)
+     {
+     System.out.println("in main");
+     new Z();
+     new Z ();
+}}
