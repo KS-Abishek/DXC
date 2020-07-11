@@ -1,0 +1,110 @@
+package org.animals;
+
+public class Lion {
+	String colour ="Tawny Yellow";
+	float weight= (float) 190.5;
+	int age = 25; 
+	public void vegetarian() {
+		
+		System.out.println("Lions Are Carnivores");
+	}
+	public void canClimb() {
+		System.out.println("Lion Can't climb ");
+		
+	}
+	public void getSound() {
+		System.out.println("Lion Roars ");
+		
+	}
+	public void lionDetails() {
+		System.out.println(".........Lion.........");
+		System.out.println("\nLion Colour :"+colour);
+		System.out.println("Lion Weight in kg's :"+weight);
+		System.out.println("Lion Age in years :"+age);
+	}
+		
+}
+
+package org.animals;
+
+public class Monkey {
+	String colour = "Brown";
+	float weight = 19;
+	int age = 11;  
+	public void vegetarian() {
+		
+		System.out.println("Monkeys Are Omnivores");
+	}
+	public void canClimb() {
+		System.out.println("Monkeys Can Climb ");
+	}
+	public void getSound() {
+		System.out.println("Monkeys Scream ");
+	}
+	public void monkeyDetails() {
+		System.out.println(".........Monkey.........");
+		System.out.println("\nMonkey colour :"+colour);
+		System.out.println("Monkey Weight in kg's :"+weight);
+		System.out.println("Monkey Age :"+age);
+	}
+		
+}
+
+package org.animals;
+
+public class Elephant {
+	String colour ="Grey";
+	float weight= (float) 4000;
+	int age = 47; 
+	public void vegetarian() {
+		
+		System.out.println("Elephant Is Herbivorous");
+	}
+	public void canClimb() {
+		System.out.println("Elephant Can't Climb ");
+		
+	}
+	public void getSound() {
+		System.out.println("Elephant Sounds Like Trumpet ");
+		
+	}
+	public void elephantDetails() {
+		System.out.println(".........Elephant.........");
+		System.out.println("\nElephant Colour :"+colour);
+		System.out.println("Elephant Weight :"+weight);
+		System.out.println("Elephant Age in Kg's :"+age);
+	}
+	
+}
+
+
+package zoo;
+import org.animals.Lion;
+import org.animals.Elephant;
+import org.animals.Monkey;
+
+public class VandalurZoo {
+
+	public static void main(String[] args) {
+		Lion l = new Lion();
+		l.lionDetails();
+		l.vegetarian();
+		l.canClimb();
+		l.getSound();
+		System.out.println("\n");
+		Elephant p = new Elephant();
+		p.elephantDetails();
+		p.vegetarian();
+		p.canClimb();
+		p.getSound();
+		System.out.println("\n");
+		Monkey m = new Monkey();
+		m.monkeyDetails();
+		m.vegetarian();
+		m.canClimb();
+		m.getSound();
+		
+	}
+
+
+}

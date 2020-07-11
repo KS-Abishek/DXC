@@ -1,0 +1,102 @@
+public class Calculator {
+	
+	public void add(int num,int num1) {
+		
+		System.out.println("For Int Add Int : " +num+num1 );
+		
+			}
+	
+	public void add(double num,double num1 ) {
+		
+		System.out.println("\nFor Double Add Double : " +num+num1);
+	}
+	
+	public void add(int num,double num1 ) {
+		
+		System.out.println("\nFor Int Add Double : " +num+num1);
+	}
+	
+	public void add(double num,int num1 ) {
+		
+		System.out.println("\nFor Double Add Int : " +num+num1);
+	}
+	
+	public void diff(int num,int num1) {
+		
+		System.out.println("\nFor Int Diff Int : " +(num-num1));
+		
+	}
+	
+	public void diff(double num,double num1) {
+		
+		System.out.println("\nFor Double Diff Double : " +(num-num1));
+	}
+	
+	public void diff(int num,double num1) {
+		
+		System.out.println("\nFor Int Diff Double : " +(num-num1));	
+	}
+	
+	public void diff(double num,int num1) {
+		
+		System.out.println("\nFor Double Diff Int : " +(num-num1));	
+	}
+	
+	public void mul(int num,int num1) {
+		
+		System.out.println("\nFor Int Mul Int : " +num*num1 );
+	}
+	
+	public void mul(double num,double num1) {
+		
+		System.out.println("\nFor Double Mul Double : " +num*num1);			
+	}	
+	
+	public void mul(int num,double num1) {
+		
+		System.out.println("\nFor Int Mul Double : " +num*num1);	
+	}	
+	
+	public void mul(double num,int num1) {
+		System.out.println("\nFor Double Mul Int : " +num*num1);	
+	}
+	
+	public void div(int num,int num1) {
+		
+		System.out.println("\nFor Int Div Int : " +num/num1);	
+	}
+	
+	public void div(double num,double num1) {
+		System.out.println("\nFor Double Div Double : " +num/num1);	
+	}
+	
+	public void div(int num,double num1) {	
+		
+		System.out.println("\nFor Int Div Double : " +num/num1);	
+	}
+	
+	public void div(double num,int num1) {
+		
+		System.out.println("\nFor Double Div Int : " +num/num1);	
+	}
+	
+	public static void main(String[] args) {
+		Calculator ca=new Calculator();
+		ca.add(4, 2);
+		ca.add(5.0, 2.0);
+		ca.add(5, 2.0);
+		ca.add(4.0, 2);
+		ca.diff(6,3);
+		ca.diff(6.0,3.0);
+		ca.diff(6,3.0);
+		ca.diff(6.0,3);
+		ca.mul(70,2);
+		ca.mul(70.0,2.0);
+		ca.mul(70,2.0);
+		ca.mul(70.0,2);
+		ca.div(700, 100);
+		ca.div(700.0, 100.0);
+		ca.div(700, 100.0);
+		ca.div(700.0, 100);	
+	}
+}
