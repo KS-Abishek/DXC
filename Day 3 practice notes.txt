@@ -9,6 +9,7 @@ FROM employees e JOIN jobs j
 ON e.salary
 BETWEEN j.min_salary AND j.max_salary;
 
+//abishekkkkkkk
 SELECT e.last_name, e.department_id, d.department_name
 FROM employees e JOIN departments d
 ON (e.department_id = d.department_id) ;
