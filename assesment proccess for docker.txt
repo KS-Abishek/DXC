@@ -1,0 +1,46 @@
+For creating web server front end :
+
+First pull image 
+
+docker pull kharatramesh/phpworkingfinal
+
+create container
+
+docker run -it -d --name web3 -p 8083:80 kharatramesh/phpworkingfinal
+
+enter into container
+
+docker exec -it web3 /bin/bash
+
+enter to /data folder
+
+cd /data
+
+create index.php and enter the code of database fetching
+
+touch index.php
+
+install php and install php-mysql
+
+yum install php
+yum install php-mysql
+
+============================================================================
+For creating database server back end :
+
+create container:
+docker run -it -d --name db8 -e MYSQL_ROOT_PASSWORD=123 mraiadb:latest
+
+enter into container:
+docker exec -it db8 /bin/bash
+
+enter into mysql
+
+mysql -u root -p 
+password: 123
+
+create database and give priveleges 
+GRANT ALL  PRIVILEGES ON tech.* TO 'root'@'localhost' IDENTIFIED BY 'Root@!#86675' 
+
+
+
