@@ -1,0 +1,40 @@
+web services
+=====================
+apiVersion: v1
+kind: Service
+metadata :
+  name: web-service
+  labels:
+    dev: web
+spec:
+  type: nodePort
+  ports:
+  - nodePort: 31001
+    port: 80
+    targetPort: 80
+    protocol: "TCP"
+
+  selector:
+    app: web
+
+==========================================
+data services
+========================
+
+
+apiVersion: v1
+kind: Service
+metadata :
+  name: data-service
+  labels:
+    dev: app
+spec:
+  type: NodePort
+  ports:
+  - nodePort: 31001
+    port: 3306
+    targetPort: 3306
+    protocol: "TCP"
+
+  selector:
+    app: data
