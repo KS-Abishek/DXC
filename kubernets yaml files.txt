@@ -1,0 +1,82 @@
+
+mkdir /dxc
+cd /dxc
+===============================================
+***create a yaml file web.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webimagedeploy
+  labels:
+    app: web
+spec:
+
+  selector:
+    matchLabels:
+      app: web
+  replicas: 4
+
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: web1
+        image: abishek47/dxc2:webimage #USE U R WEB IMAGE
+        ports:
+        - containerPort: 80
+ 
+
+
+============================================
+
+***create a yaml file data.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: databasedeployment
+  labels:
+    app: db
+spec:
+
+  selector:
+    matchLabels:
+      app: db
+  replicas: 4
+
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+      - name: db
+        image: abishek47/dxc2:databaseimage4 #USE U R DATA IMAGE 
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: '123'
+        ports:
+        - containerPort: 3306
+
+==================================================================================
+
+kubectl create -f web.yaml
+kubectl create -f data.yaml
+kubectl get pods -o wide
+
+===================================================
+
+
+
+
+
+
+
+
+
+
+
+
